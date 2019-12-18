@@ -1,0 +1,90 @@
+INSERT RECORDS
+---------------
+// INSERT SINGLE RECORD
+let employee = {
+    name : 'John',
+    age : 40,
+    designation : 'Project Manager',
+    address : 'Jubilee Hills',
+    salary : 85000
+};
+db.collection('employee').insertOne(employee,(err , r) => {
+    console.log('One Record is inserted to database');
+});
+client.close();
+
+------------------------------------
+// INSERT SINGLE RECORD
+let employee = {
+    name : 'Wilson',
+    age : 45,
+    designation : 'Sr.Project Manager',
+    address : 'Hitech City',
+    salary : 150000
+};
+db.collection('employee').insertOne(employee,(err , r) => {
+    console.log('One Record is inserted to database');
+});
+client.close();
+
+--------------------------------------------
+// INSERT Multiple Records
+let employeesArray = [
+    {
+        name : 'Rajan',
+        age : 25,
+        designation : 'Software Engineer',
+        address : 'Ameerpet',
+        salary : 15000
+    },
+    {
+        name : 'Mahesh',
+        age : 35,
+        designation : 'Team Lead',
+        address : 'Jubilee Hills',
+        salary : 65000
+    }
+];
+db.collection('employee').insertMany(employeesArray, (err , data) => {
+    console.log('Inserted Two Records');
+    client.close();
+});
+	
+READ OPEARATIONS
+----------------
+// READ Records from database
+db.collection('employee').find().toArray((err , employees) => {
+    console.log(employees);
+});
+client.close();
+
+UPDATE OPEARATIONS
+------------------
+// UPDATE RECORD to database
+// Mahesh record -> age => 36 , designation => Sr.Team Lead
+db.collection('employee').updateOne({name : 'Mahesh'} ,
+    {$set: {
+        age : 36,
+        designation : 'Sr.Tech Lead'
+    }} , (err , r) => {
+    console.log('Updated a record');
+});
+client.close();
+
+DELETE RECORD
+-------------
+ // DELETE RECORD FROM DATABASE
+// Delete Wilson Record
+db.collection('employee').deleteOne({name : 'Wilson'} , (err , r) => {
+    console.log('One Record is deleted');
+});
+client.close();
+	
+
+	
+
+
+
+	
+
+

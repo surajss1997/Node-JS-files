@@ -1,0 +1,14 @@
+{
+  "name": "04_app",
+  "version": "1.0.0",
+  "description": "none",
+  "main": "04_app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "suraj sawant",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.15"
+  }
+}

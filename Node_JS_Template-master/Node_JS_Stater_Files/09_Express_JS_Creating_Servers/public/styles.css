@@ -1,0 +1,12 @@
+body{
+    background-color: coral;
+    color: black;
+    text-align: center;
+    font-family: Arial,sans-serif;
+}
+h1{
+    font-size: 40px;
+}
+p{
+    font-size: 20px;
+}
